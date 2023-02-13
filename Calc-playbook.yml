@@ -51,7 +51,7 @@
 
   - name: Create a Tomcat Group
     group:
-      name: tomca
+      name: tomcat
 
   - name: Create a Tomcat Directory
     file:
