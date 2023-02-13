@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Initializing Maven') {
+            steps {
+                sh 'mvn initialize'
+            }
+        }
+        stage ('Build'){
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage ('test'){
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage ('Execute ansible playbook'){
+            steps {
+                ansiblePlaybook become: true, disableHostKeyChecking: true, inventory: 'inventory.yml', playbook: 'Calc-playbook.yml'
+            }
+        }
+    }
+}
