@@ -13,20 +13,20 @@
   #   command: sh /opt/tomcat8/bin/shutdown.sh
   #   # when: ansible_distribution == "Ubuntu"
 
-  - name: Remove Tomcat
-    file:
-      path: /opt/tomcat8
-      state: absent
+ # - name: Remove Tomcat
+ #   file:
+ #     path: /opt/tomcat8
+ #     state: absent
 
-  - name: remove user "tomcat"
-    user:
-      name: tomcat
-      state: absent
+#  - name: remove user "tomcat"
+#    user:
+#      name: tomcat
+#      state: absent
 
-  - name: remove group "tomcat"
-    group:
-      name: tomcat
-      state: absent
+ # - name: remove group "tomcat"
+ #   group:
+ #     name: tomcat
+ #     state: absent
 
   # - name: Install Apache Tomcat10 using ansible
   #   hosts: all
